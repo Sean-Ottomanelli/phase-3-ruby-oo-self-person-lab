@@ -65,6 +65,44 @@ class Person
         "Hi #{friend.name}! It's #{self.name}. How are you?"
     end
 
+    def start_conversation(friend, topic)
+        if topic == "politics"
+            self.happiness = self.happiness - 1
+        friend.happiness = friend.happiness - 1
+        
+        
+        if self.happiness < 0
+            self.happiness = 0
+            
+        end
+        if friend.happiness < 0
+            friend.happiness = 0
+        end
+
+        return "blah blah partisan blah lobbyist"
+    end
+
+        if topic == "weather"
+            self.happiness = self.happiness + 1
+        friend.happiness = friend.happiness + 1
+        
+        if self.happiness > 10
+            self.happiness = 10
+            
+        end
+        if friend.happiness > 10
+            friend.happiness = 10
+        end
+
+        return "blah blah sun blah rain"
+    end
+
+if topic != "weather" || "politics"
+    "blah blah blah blah blah"
+
+end
+    end
+
 
 end
 
@@ -72,6 +110,6 @@ sean=Person.new("Sean")
 
 ryan=Person.new("Ryan")
 
-binding.pry
+
 
 # your code goes here
